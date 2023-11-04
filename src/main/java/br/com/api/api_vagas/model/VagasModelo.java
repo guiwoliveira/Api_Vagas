@@ -19,11 +19,9 @@ public class VagasModelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //* Implicito
-    private String nome_empresa;
-
     //* Dados pela empresa
-    private String tipo_vaga;
+    private String nome;
+    private String tipo;
     private String descricao;
     private String cargo;
     private String local;

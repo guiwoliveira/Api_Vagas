@@ -26,7 +26,10 @@ public class VagasServico {
     // Método para cadastrar vagas
     public ResponseEntity<?> cadastrarAlterar(VagasModelo vm, String acao){
 
-        if(vm.getTipo_vaga().equals("")){
+        if(vm.getNome().equals("")){
+            rm.setMensagem("O nome é obrigatório!");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        } else if(vm.getTipo().equals("")){
             rm.setMensagem("O tipo da vaga é obrigatório!");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         } else if(vm.getDescricao().equals("")){

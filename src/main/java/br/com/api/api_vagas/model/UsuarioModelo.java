@@ -5,13 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "usuario")
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
-@Setter
+@EqualsAndHashCode(of = "user_id")
 public class UsuarioModelo {
     
     @Id
@@ -23,6 +27,6 @@ public class UsuarioModelo {
     private String email;
     private String nome;
     private String senha;
-    private int tipo_conta;
+    private String role;
 
 }

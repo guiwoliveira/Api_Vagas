@@ -9,20 +9,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "vagas")
+@Table(name = "usuario")
 @Getter
 @Setter
-public class VagasModelo {
-
+public class UsuarioModelo {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long user_id;
 
-    private String tipo;
-    private String descricao;
-    private String cargo;
-    private String local;
-    private String turno;
-    private String salario;
+    private int cpf;
+    private int cnpj;
+    private String email;
+    private String nome;
+    private String senha;
+    private int tipo_conta;
 
 }
